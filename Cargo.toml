@@ -1,0 +1,49 @@
+[package]
+name = "sovereign_math"
+version = "0.1.0"
+edition = "2021"
+authors = ["Ahmad Ali Parr <ahmad@sovereign.local>"]
+description = "A no_std, formally verified Euclidean division and modulo suite featuring type-level locks."
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/sovereign-stack/sovereign_math"
+categories = ["no-std", "algorithms", "mathematics", "embedded"]
+keywords = ["euclidean", "verification", "kani", "prusti", "no_std"]
+
+[lib]
+name = "sovereign_math"
+path = "src/lib.rs"
+
+[features]
+default = []
+verification = []
+
+[profile.dev]
+opt-level = 0
+debug = true
+overflow-checks = true
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+overflow-checks = false
+
+[profile.kani]
+inherits = "dev"
+opt-level = 0
+debug-assertions = true
+overflow-checks = true
+
+[profile.prusti]
+inherits = "dev"
+opt-level = 0
+debug-assertions = true
+overflow-checks = true
+
+[package.metadata.kani]
+flags = ["--unwind", "1", "--enable-unstable", "--default-unwind", "1"]
+
+[package.metadata.prusti]
+flags = ["--verify-functions", "--check-overflows"]
