@@ -2,11 +2,11 @@
 name = "sovereign_math"
 version = "0.1.0"
 edition = "2021"
-authors = ["Ahmad Ali Parr <ahmad@sovereign.local>"]
+authors = ["Ahmad Ali Parr <ahmedparr93@gmail.com>"]
 description = "A no_std, formally verified Euclidean division and modulo suite featuring type-level locks."
-license = "MIT OR Apache-2.0"
+license = "Sovereign Source License v1.0 OR BSL-1.1 OR AGPL-3.0"
 readme = "README.md"
-repository = "https://github.com/sovereign-stack/sovereign_math"
+repository = "https://github.com/SNAPKITTYWEST/sovereign-math"
 categories = ["no-std", "algorithms", "mathematics", "embedded"]
 keywords = ["euclidean", "verification", "kani", "prusti", "no_std"]
 
